@@ -33,4 +33,4 @@ def mobil():
     return render_template("mobil.html")
 
 
-app.run("0.0.0.0", port=2037, debug=True)
+app.run("0.0.0.0", port=3073, debug=True)
