@@ -32,5 +32,9 @@ def programs():
 def mobil():
     return render_template("mobil.html")
 
+@app.route("/listen")
+def listen():
+    return render_template("listen.html")
+
 
 app.run("0.0.0.0", port=3073, debug=True)
