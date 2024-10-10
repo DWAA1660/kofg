@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, send_from_directory
 
 app = Flask(__name__)
 
@@ -35,6 +35,11 @@ def mobil():
 @app.route("/listen")
 def listen():
     return render_template("listen.html")
+
+@app.route('/robots.txt')
+@app.route('/sitemap.xml')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
 
 
 app.run("0.0.0.0", port=3073, debug=True)
